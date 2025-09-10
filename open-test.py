@@ -33,7 +33,6 @@ def load_data(filename):
    
 
 
-#TODO: hur gör man så funktionen load_data returnerar products istället?
 #TODO: gör så man kan se en numrerad lista som börjar på 1.
 #TODO: skriv en funktion som returnerar en specifik produkt med hjälp av id
 #TODO: skriv en funktion som tar bort en specifik produkt med hjälp av id
