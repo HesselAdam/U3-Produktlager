@@ -31,9 +31,8 @@ def load_data(filename):
             )
     return products_list  # Returnera listan istället för att ha en global variabel
    
+# Nedan så har du mina funktioner som jag gjorde för dina todos.
 
-
-#TODO: hur gör man så funktionen load_data returnerar products istället?
 def display_products_numbered(products_list):
     print("\nPRODUKTLISTA")
     for i, product in enumerate(products_list, 1):
@@ -47,8 +46,11 @@ def get_product_by_id(products_list, product_id):
         if product['id'] == product_id:
             return product
 
-#TODO: skriv en funktion som tar bort en specifik produkt med hjälp av id
-
+def delete_product_by_id(products_list, product_id):
+    for i, product in enumerate(products_list):
+        if product['id'] == product_id:
+            removed_product = products_list.pop(i)
+            return removed_product
 
 locale.setlocale(locale.LC_ALL, 'sv_SE.UTF-8')  
 
@@ -65,6 +67,14 @@ if product:
     print(f"Hittade produkt: {product['name']}")
 else:
     print("Produkten hittades inte")
+
+# Här så tar jag bort en produkt med id 5 från listan. sista todon.
+removed_product = delete_product_by_id(products, 5)
+if removed_product:
+    print(f"Tog bort produkt: {removed_product['name']}")
+    print(f"Antal produkter kvar: {len(products)}")
+else:
+    print("Produkten hittades inte tyvärr")
     
 
 
