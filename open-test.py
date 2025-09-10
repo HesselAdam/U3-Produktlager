@@ -29,7 +29,7 @@ def load_data(filename):
                     "quantity": quantity
                 }
             )
-    return products_list  # Returnera listan istället för att modifiera global variabel
+    return products_list  # Returnera listan istället för att ha en global variabel
    
 
 
@@ -42,7 +42,11 @@ def display_products_numbered(products_list):
         print(f"   Antal i lager: {product['quantity']}")
         print()
 
-#TODO: skriv en funktion som returnerar en specifik produkt med hjälp av id
+def get_product_by_id(products_list, product_id):
+    for product in products_list:
+        if product['id'] == product_id:
+            return product
+
 #TODO: skriv en funktion som tar bort en specifik produkt med hjälp av id
 
 
@@ -54,6 +58,13 @@ os.system('cls')
 
 # Visa produkterna i en numrerad lista
 display_products_numbered(products)
+
+# Här så hämtar jag en specifik produkt med id, i detta fall id 1. jag behöver bara se till att det är mellan 0-10)
+product = get_product_by_id(products, 10)
+if product:
+    print(f"Hittade produkt: {product['name']}")
+else:
+    print("Produkten hittades inte")
     
 
 
