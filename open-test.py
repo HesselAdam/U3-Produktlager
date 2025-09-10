@@ -10,6 +10,7 @@ def format_currency(value):
 
 
 def load_data(filename): 
+    products_list = []  # Lokal lista istället för global variabel
     with open(filename, 'r') as file:       #öppnar en fil med read-rättighet
         reader = csv.DictReader(file)
         for row in reader:
@@ -19,7 +20,7 @@ def load_data(filename):
             price = float(row['price'])
             quantity = int(row['quantity'])
             
-            products.append(
+            products_list.append(
                 {                   
                     "id": id,       
                     "name": name,
@@ -28,6 +29,7 @@ def load_data(filename):
                     "quantity": quantity
                 }
             )
+    return products_list  # Returnera listan istället för att modifiera global variabel
    
 
 
@@ -39,7 +41,7 @@ def load_data(filename):
 
 locale.setlocale(locale.LC_ALL, 'sv_SE.UTF-8')  
 
-load_data('db_products.csv')
+products = load_data('db_products.csv')
 
 os.system('cls')
     
