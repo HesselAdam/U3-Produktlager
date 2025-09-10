@@ -37,8 +37,8 @@ def display_products_numbered(products_list):
     print("\nPRODUKTLISTA")
     for i, product in enumerate(products_list, 1):
         print(f"{i}. {product['name']} - {(product['price'])}")
-        print(f"   Beskrivning: {product['desc']}")
-        print(f"   Antal i lager: {product['quantity']}")
+        print(f"Beskrivning: {product['desc']}")
+        print(f"Antal i lager: {product['quantity']}")
         print()
 
 def get_product_by_id(products_list, product_id):
