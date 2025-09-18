@@ -33,12 +33,15 @@ def load_data(filename):
    
 
 
-#TODO: hur gör man så funktionen load_data returnerar products istället?
-#TODO: gör så man kan se en numrerad lista som börjar på 1.
 def numererad_lista(products):
     for i, product in enumerate(products, 1):
         print(f"{i}. {product['name']} - {format_currency(product['price'])} - {product['quantity']} st")
-#TODO: skriv en funktion som returnerar en specifik produkt med hjälp av id
+
+
+def get_product_by_id(products, products_id):
+    for product in products:
+        if product["id"] == products_id:
+            return print(f"Produkt: {product['name']} Beskrivning: {product['desc']} Pris: {product['price']} Antal i lager: {product['quantity']} st")
 #TODO: skriv en funktion som tar bort en specifik produkt med hjälp av id
 
 os.system('cls')
@@ -48,5 +51,6 @@ products = load_data('db_products.csv')
     
 numererad_lista(products)
 
+get_product_by_id(products, int(input("Ange produktens id: ")))
 
 
