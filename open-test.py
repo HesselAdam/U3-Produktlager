@@ -42,7 +42,7 @@ def save_data(filename, products):
 
 def numererad_lista(products):
     for i, product in enumerate(products, 1):
-        print(f"{i}. {product['name']} - {format_currency(product['price'])} - {product['quantity']} st")
+        print(f"{product['id']}) -- {i}. {product['name']} - {format_currency(product['price'])} - {product['quantity']} st")
 
 
 def get_product_by_id(products, products_id):
@@ -67,6 +67,6 @@ numererad_lista(products)
 
 get_product_by_id(products, int(input("Ange produktens id: ")))
 
-remove_product_by_id(products, int(input("Ange produktens id som ska tas bort.")))
+remove_product_by_id(products, int(input("Ange produktens id som ska tas bort: ")))
 
 save_data('db_products.csv', products)
